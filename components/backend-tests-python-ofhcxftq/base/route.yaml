@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: backend-tests-python-ofhcxftq
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: backend-tests-python-ofhcxftq 
+  name: backend-tests-python-ofhcxftq
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: backend-tests-python-ofhcxftq
+    weight: 100 
